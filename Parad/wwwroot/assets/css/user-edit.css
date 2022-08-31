@@ -1,0 +1,133 @@
+#user-edit {
+  margin-top: 110px;
+  margin-bottom: 110px;
+}
+#user-edit .container .row .col-lg-12 .edit-title {
+  display: flex;
+  justify-content: center;
+}
+#user-edit .container .row .col-lg-12 .edit-title i {
+  font-size: 32px;
+  margin-left: 19px;
+  padding-top: 4px;
+  color: rgb(4, 170, 109);
+}
+#user-edit .container .row .col-lg-6 form .mb-3 {
+  margin-top: 20px;
+}
+#user-edit .container .row .col-lg-6 form .mb-3 .img-download {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#user-edit .container .row .col-lg-6 form .mb-3 .img-download .photo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#user-edit .container .row .col-lg-6 form .mb-3 .img-download .photo img {
+  position: absolute;
+  height: 100%;
+  width: 300px;
+  border-radius: 50%;
+  text-indent: -10000px;
+}
+@media screen and (max-width: 340px) {
+  #user-edit .container .row .col-lg-6 form .mb-3 .img-download .photo img {
+    width: 200px;
+    height: 200px;
+  }
+}
+#user-edit .container .row .col-lg-6 form .mb-3 .img-download .cancel-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: rgb(4, 170, 109);
+  display: none;
+  cursor: pointer;
+}
+#user-edit .container .row .col-lg-6 form .mb-3 .active {
+  border: none;
+}
+#user-edit .container .row .col-lg-6 form .mb-3 .active .cancel-btn {
+  transition: 0.2s;
+}
+#user-edit .container .row .col-lg-6 form .mb-3 .active .cancel-btn:hover {
+  color: red;
+}
+#user-edit .container .row .col-lg-6 form .mb-3 input[id=default-btn] {
+  background: none repeat scroll 0 0 rgb(4, 170, 109);
+  isolation: isolate;
+  margin-top: 30px;
+  border-radius: 10px 10px 10px 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 7px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000000;
+}
+@media screen and (max-width: 330px) {
+  #user-edit .container .row .col-lg-6 form .mb-3 input[id=default-btn] {
+    width: 230px;
+  }
+}
+#user-edit .container .row .col-lg-6 form .mb-3 label {
+  font-size: 17px;
+  font-weight: 500;
+}
+#user-edit .container .row .col-lg-6 form .mb-3 input {
+  height: 42px;
+  box-shadow: none;
+  border: none;
+  border-radius: 10px;
+}
+#user-edit .container .row .col-lg-6 form .save-btn {
+  width: 100%;
+  margin-top: 20px;
+}
+#user-edit .container .row .col-lg-6 form .save-btn button {
+  display: flex;
+  justify-content: center;
+  width: 145px;
+  height: 44px;
+  border: none;
+  padding: 7px;
+  border: 1px solid rgb(4, 170, 109);
+  background: rgb(4, 170, 109);
+  border-radius: 6px;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+#user-edit .container .row .col-lg-6 form .save-btn button p {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  transition: 0.3s;
+}
+#user-edit .container .row .col-lg-6 form .save-btn button i {
+  font-size: 18px;
+  margin-top: 4px;
+  margin-left: 8px;
+  color: white;
+  transition: 0.4s;
+}
+#user-edit .container .row .col-lg-6 form .save-btn button:hover {
+  background: white;
+}
+#user-edit .container .row .col-lg-6 form .save-btn button:hover p {
+  color: rgb(4, 170, 109);
+}
+#user-edit .container .row .col-lg-6 form .save-btn button:hover i {
+  color: rgb(4, 170, 109);
+  transform: rotate(120deg);
+}/*# sourceMappingURL=user-edit.css.map */

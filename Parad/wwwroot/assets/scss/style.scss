@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
+html,
+body {
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+}
+
+header {
+    nav {
+        z-index: 99999;
+        background-color: #dddddd !important;
+
+        .container-fluid {
+            .navbar-brand {
+                img {
+                    width: 114px;
+                }
+            }
+
+            .navbar-toggler {
+                border: none;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .navbar-collapse {
+                transition: all 0.3s ease 0s;
+
+                form {
+                    border: 0.5px solid #adabab;
+                    border-radius: 30px;
+                    width: 17rem;
+                    transition: 0.3s;
+
+                    input {
+                        border: none;
+                        border-radius: 37px;
+                        background: transparent;
+                        margin: 0px !important;
+
+                        &:focus {
+                            box-shadow: none;
+                            border: none;
+                        }
+                    }
+                }
+
+                ul {
+                    li {
+                        a {
+                            font-size: 18px;
+                            font-weight: 500;
+                            color: black;
+                            transition: 0.1s;
+
+                            &:hover {
+                                color: rgb(4, 170, 109) !important;
+                            }
+                        }
+
+                        .dropdown-menu {
+                            right: 0 !important;
+                            left: auto;
+                        }
+
+                    }
+
+                    .ver-line {
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        padding-top: 7px;
+                        padding-bottom: 7px;
+
+                        .vl {
+                            border-left: 1px solid green;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .top-btn {
+        position: fixed;
+        z-index: 779;
+        bottom: 30px;
+        right: 30px;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: rgb(4, 170, 109);
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+
+            i {
+                color: black;
+                font-size: 20px;
+                margin-top: 9px;
+                transition: 0.3s;
+            }
+        }
+
+        &:hover {
+            background-color: #fff;
+
+            i {
+                color: rgb(4, 170, 109);
+            }
+        }
+    }
+}
+
+.first {
+    background-image: url(../images/tree.jpg);
+    height: 400px;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
+    .container {
+        height: 100%;
+
+        .row {
+            height: 100%;
+
+            .col-lg-6 {
+                height: 100%;
+
+                img {
+                    height: 100%;
+
+                }
+            }
+
+            .right {
+                margin-top: 4rem;
+
+                #carouselExampleDark {
+                    .carousel-inner {
+                        .carousel-item {
+                            background: transparent;
+                            height: 350px;
+
+                            .carousel-caption {
+                                height: 100%;
+
+                                p {
+                                    font-size: 17px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#second {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .container {
+        .row {
+            .litle-title {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+
+                .box-title {
+                    width: 150px;
+                    height: 35px;
+                    text-align: center;
+                    border: 2px solid rgb(4, 170, 109);
+                    background-color: #dddddd;
+                    border-radius: 20px;
+                    cursor: default;
+
+                    p {
+                        font-size: 17px;
+                        font-weight: 700;
+                        margin: 0;
+                        margin-top: 3px;
+                        color: gray;
+                    }
+                }
+            }
+
+            .first-title {
+                text-align: center;
+
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                .line {
+                    margin: 0 auto;
+                    height: 7px;
+                    width: 36rem;
+                    background-repeat: no-repeat;
+                    background-image: linear-gradient(to right top, #cf1111, #d80051, #c5008b, #913dbb, #005dd6);
+                    border-radius: 20px;
+                    transition: 0.2s;
+                }
+            }
+
+            .all-categories {
+                z-index: 0;
+                margin-bottom: 23px;
+
+                .all-cat {
+                    a {
+                        display: flex;
+                        text-decoration: none;
+                        width: 167px;
+
+                        p {
+                            font-size: 19px;
+                            color: rgb(4, 170, 109);
+                            transition: 0.2s;
+                        }
+
+                        i {
+                            font-size: 19px;
+                            color: rgb(4, 170, 109);
+                            margin-top: 5px;
+                            margin-left: 8px;
+                            transition: 0.2s;
+                        }
+                        &:hover{
+                            p{
+                                color: black;
+                            }
+                            i{
+                                color: black;
+                                margin-left:20px !important;
+                            }
+                        }
+                        .darkmode--activated &:hover{
+                            p{
+                                color: white;
+                            }
+                            i{
+                                color: white;
+                                margin-left:20px !important;
+                            }
+                        }
+                    }
+                }
+            }
+            hr{
+                height: 2px;
+                background-color: gray;
+            }
+        }
+    }
+}
+
+#third {
+    .container {
+        .row {
+            .load-more {
+                display: flex;
+                justify-content: center;
+                margin-top: 4rem;
+                margin-bottom: 4rem;
+
+                button {
+                    width: 9rem;
+                    height: 3rem;
+                    border: none;
+                    background-color: rgb(4, 170, 109);
+                    text-align: center;
+                    transition: 0.3s;
+
+                    p {
+                        color: white;
+                        margin: 0 auto;
+                        font-weight: 600;
+                        transition: 0.3s;
+                    }
+
+                    &:hover {
+                        border: 1px solid rgb(4, 170, 109);
+                        background-color: white;
+
+                        p {
+                            color: rgb(4, 170, 109);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+footer {
+    .footer-main {
+        .container {
+            .row {
+                div {
+                    h6 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        a {
+                            text-decoration: none;
+                            transition: 0.3s;
+
+                            &:hover {
+                                color: rgb(4, 170, 109) !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

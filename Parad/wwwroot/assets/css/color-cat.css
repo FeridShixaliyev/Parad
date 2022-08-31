@@ -1,0 +1,92 @@
+#first-color-categories {
+    background-image: url(/assets/images/color-bg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    height: 250px;
+    width: 100%;
+    padding-top: 110px;
+  }
+  #first-color-categories .container .row .cat-title {
+    display: flex;
+    justify-content: center;
+    margin: 0 !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 7px;
+  }
+  #first-color-categories .container .row .cat-title h1 {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 7px;
+    color: white;
+    cursor: default;
+  }
+  #first-color-categories .container .row .cat-title i {
+    color: white;
+  }
+
+  #second-color-categories{
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  #second-color-categories .container .row .col-lg-12 .back{
+    width: 250px;
+    display: flex;
+    justify-content: center;
+  }
+  #second-color-categories .container .row .col-lg-12 .back a{
+    display: flex;
+    text-decoration: none;
+  }
+  #second-color-categories .container .row .col-lg-12 .back a i{
+    padding-top: 3px;
+    font-size: 21px;
+    color: black;
+    transition: 0.3s;
+  }
+  .darkmode--activated #second-color-categories .container .row .col-lg-12 .back a i{
+    color: white;
+  }
+  .darkmode--activated #second-color-categories .container .row .col-lg-12 .back a p{
+    color: white;
+  }
+  #second-color-categories .container .row .col-lg-12 .back a p{
+    font-size: 17px;
+    color: black;
+    font-weight: 600;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+  #second-color-categories .container .row .col-lg-12 .back a:hover i{
+    color: rgb(4, 170, 109);
+  }
+  #second-color-categories .container .row .col-lg-12 .back a:hover p{
+    margin-left: 15px;
+    color: rgb(4, 170, 109);
+   
+  }
+
+/* Media query */
+@media screen and (max-width: 992px){
+
+    #first-color-categories .container .row .cat-title h1 {
+      padding-top: 10px;
+    }
+  }
+
+@media screen and (max-width: 532px){
+    #first-color-categories .container .row .cat-title h1 {
+      padding-top: 15px;
+    }
+  }
+
+@media screen and (max-width: 400px){
+    #first-color-categories .container .row .cat-title h1 {
+      padding-top: 17px;
+    }
+    #first-color-categories .container .row .cat-title .start,.end{
+      display: none;
+    }
+  }

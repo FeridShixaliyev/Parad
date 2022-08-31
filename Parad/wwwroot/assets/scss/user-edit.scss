@@ -1,0 +1,163 @@
+#user-edit {
+    margin-top: 110px;
+    margin-bottom: 110px;
+
+    .container {
+        .row {
+            .col-lg-12 {
+                .edit-title {
+                    display: flex;
+                    justify-content: center;
+                    i {
+                        font-size: 32px;
+                        margin-left: 19px;
+                        padding-top: 4px;
+                        color: rgb(4, 170, 109);
+                    }
+                }
+            }
+
+            .col-lg-6 {
+
+                form {
+                    .mb-3 {
+                        margin-top: 20px;
+
+                        .img-download {
+                            position: relative;
+                            height: 300px;
+                            width: 100%;
+                            border-radius: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            overflow: hidden;
+
+                            .photo {
+                                position: absolute;
+                                height: 100%;
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                img {
+                                    position: absolute;
+                                    height: 100%;
+                                    width: 300px;
+                                    border-radius: 50%;
+                                    text-indent: -10000px;
+
+                                    @media screen and(max-width:340px) {
+                                        width: 200px;
+                                        height: 200px;
+                                    }
+                                }
+                            }
+
+                            .cancel-btn {
+                                position: absolute;
+                                top: 15px;
+                                right: 15px;
+                                font-size: 20px;
+                                color: rgb(4, 170, 109);
+                                display: none;
+                                cursor: pointer;
+                            }
+
+                        }
+
+                        .active {
+                            border: none;
+
+                            .cancel-btn {
+                                transition: 0.2s;
+
+                                &:hover {
+                                    color: red;
+                                }
+                            }
+                        }
+
+                        input[id="default-btn"] {
+                            background: none repeat scroll 0 0 rgb(4, 170, 109);
+                            isolation: isolate;
+                            margin-top: 30px;
+                            border-radius: 10px 10px 10px 10px;
+                            color: #FFFFFF;
+                            cursor: pointer;
+                            font-weight: bold;
+                            padding: 7px;
+                            text-align: center;
+                            text-shadow: 1px 1px 1px #000000;
+
+                            @media screen and(max-width:330px) {
+                                width: 230px;
+                            }
+                        }
+
+                        // -------------------------
+                        label {
+                            font-size: 17px;
+                            font-weight: 500;
+                        }
+
+                        input {
+                            height: 42px;
+                            box-shadow: none;
+                            border: none;
+                            border-radius: 10px;
+                        }
+                    }
+
+                    .save-btn {
+                        width: 100%;
+                        margin-top: 20px;
+
+                        button {
+                            display: flex;
+                            justify-content: center;
+                            width: 145px;
+                            height: 44px;
+                            border: none;
+                            padding: 7px;
+                            border: 1px solid rgb(4, 170, 109);
+                            background: rgb(4, 170, 109);
+                            border-radius: 6px;
+                            margin: 0 auto;
+                            transition: 0.3s;
+
+                            p {
+                                font-size: 18px;
+                                font-weight: 600;
+                                color: white;
+                                transition: 0.3s;
+                            }
+
+                            i {
+                                font-size: 18px;
+                                margin-top: 4px;
+                                margin-left: 8px;
+                                color: white;
+                                transition: 0.4s;
+                            }
+
+                            &:hover {
+                                background: white;
+
+                                p {
+                                    color: rgb(4, 170, 109);
+                                }
+
+                                i {
+                                    color: rgb(4, 170, 109);
+                                    transform: rotate(120deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

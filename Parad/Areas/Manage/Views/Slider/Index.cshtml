@@ -1,0 +1,42 @@
+﻿@model List<Slider>
+@{
+    ViewData["Title"] = "Sliders";
+}
+
+<div class="container mt-5">
+
+    <div class="create">
+        <a class=" btn btn-success" asp-controller="slider" asp-action="create">Create</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Title</td>
+                    <td>Content ....</td>
+                    <td>
+                        <a class="btn btn-outline-primary" asp-controller="slider" asp-action="edit" asp-route-id="@item.Id">edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-controller="slider" asp-action="delete" asp-route-id="@item.Id">delete</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
+
+

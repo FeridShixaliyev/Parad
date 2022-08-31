@@ -1,0 +1,90 @@
+#downloads {
+    background-image: url(/assets/images/tornado.jpg);
+    height: 400px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    // background-position-y: -247px;
+
+    .parad-logo {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        img {
+            object-fit: cover;
+            width: 600px;
+            @media screen and(min-width:778px)and(max-width:992px) {
+                width: 450px;
+            }
+            @media screen and(min-width:556px)and(max-width:778px) {
+                width:300px ;
+            }
+            @media screen and(min-width:270px)and(max-width:556px) {
+                width:270px ;
+            }
+        }
+    }
+    @media screen and(min-width:778px)and(max-width:992px) {
+        height:300px ;
+    }
+    @media screen and(max-width:778px) {
+        height:250px ;
+    }
+}
+
+#favorite-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .container {
+        .row {
+            .litle-title {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+
+                .box-title {
+                    width: 150px;
+                    height: 35px;
+                    text-align: center;
+                    border: 2px solid rgb(4, 170, 109);
+                    background-color: #dddddd;
+                    border-radius: 20px;
+                    cursor: default;
+
+                    p {
+                        font-size: 17px;
+                        font-weight: 700;
+                        margin: 0;
+                        margin-top: 3px;
+                        color: gray;
+                    }
+                }
+            }
+
+            .first-title {
+                text-align: center;
+                margin-bottom: 30px;
+
+                h1 {
+                    font-size: 30px;
+                }
+
+                .line {
+                    margin: 0 auto;
+                    height: 7px;
+                    width: 27em;
+                    background-repeat: no-repeat;
+                    background-image: linear-gradient(to right top, #cf1111, #d80051, #c5008b, #913dbb, #005dd6);
+                    border-radius: 20px;
+                    transition: 0.2s;
+
+                    @media screen and (max-width:400px) {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}

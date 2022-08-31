@@ -1,0 +1,392 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- FontAwesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Css links -->
+    <link rel="stylesheet" href="~/assets/css/downloads.css">
+    <link rel="stylesheet" href="~/assets/css/about.css">
+    <link rel="stylesheet" href="~/assets/css/get-start.css">
+    <link rel="stylesheet" href="~/assets/css/my-favorites.css">
+    <link rel="stylesheet" href="~/assets/css/night-cat.css">
+    <link rel="stylesheet" href="~/assets/css/nature-cat.css">
+    <link rel="stylesheet" href="~/assets/css/sport-cat.css">
+    <link rel="stylesheet" href="~/assets/css/travel-cat.css">
+    <link rel="stylesheet" href="~/assets/css/ios-cat.css">
+    <link rel="stylesheet" href="~/assets/css/design-cat.css">
+    <link rel="stylesheet" href="~/assets/css/cute-cat.css">
+    <link rel="stylesheet" href="~/assets/css/color-cat.css">
+    <link rel="stylesheet" href="~/assets/css/cool-cat.css">
+    <link rel="stylesheet" href="~/assets/css/car-cat.css">
+    <link rel="stylesheet" href="~/assets/css/animals-cat.css">
+    <link rel="stylesheet" href="~/assets/css/art-cat.css">
+    <link rel="stylesheet" href="~/assets/css/andriod-cat.css">
+    <link rel="stylesheet" href="~/assets/css/all-categories.css">
+    <link rel="stylesheet" href="~/assets/css/user-edit.css">
+    <link rel="stylesheet" href="~/assets/css/account-setting.css">
+    <link rel="stylesheet" href="~/assets/css/register.css">
+    <link rel="stylesheet" href="~/assets/css/login.css">
+    <link rel="stylesheet" href="~/assets/css/nav-style.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+</head>
+
+<div id="preloader">
+</div>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="~/assets/images/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search . . ." aria-label="Search">
+                    </form>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Image" asp-action="AddImage">Get Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Category" asp-action="Index">Categories</a>
+                        </li>
+                        @if (User.IsInRole("Admin")|| User.IsInRole("Moderator"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Manage" asp-controller="Dashboard" asp-action="Index">Admin Panel</a>
+                            </li>
+                        }
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ver-line">
+                                <div class="vl"></div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Auth" asp-action="Login">Log in</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Auth" asp-action="Register">Register</a>
+                            </li>
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ver-line">
+                                <div class="vl"></div>
+                            </li>
+                            <li class="nav-item dropdown" style="padding-top:5px ;">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false" style="padding:0px ;">
+                                    <img id="main-pro-img" src="" style="width: 29px; height: 29px; border-radius: 50%;">
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="Index">My Account</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="Favorites">My Favorites</a></li>
+                                    <li><a class="dropdown-item" href="downloads.html">Downloads Photos</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Auth" asp-action="LogOut">Log Out</a></li>
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="top-btn">
+            <a href="#"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </header>
+    @RenderBody()
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-between p-4 text-white darkmode-ignore"
+                 style="background-color: rgb(4, 170, 109)">
+            <!-- Left -->
+            <div class="me-5">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+            <!-- Right -->
+            <div>
+                <a href="" class="text-white me-4" style="text-decoration:none;">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="text-white me-4" style="text-decoration:none;">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="text-white me-4" style="text-decoration:none;">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="text-white me-4" style="text-decoration:none;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="text-white me-4" style="text-decoration:none;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="text-white me-4" style="text-decoration:none;">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+        <!-- Section: Links  -->
+        <section class="footer-main">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold">PARAD</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: rgb(4, 170, 109); height: 2px" />
+                        <p>
+                            Beautiful, free images gifted by the world's most generous community of photographers.
+                            Better than any royalty free or stock photos.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Services</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: rgb(4, 170, 109); height: 2px" />
+                        <p>
+                            <a asp-controller="About" asp-action="Index" class="text-dark">About</a>
+                        </p>
+                        <p>
+                            <a asp-controller="Image" asp-action="AddImage" class="text-dark">Get Start</a>
+                        </p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p>
+                                <a asp-controller="Account" asp-action="Index" class="text-dark">Account</a>
+                            </p>
+                        }
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <p>
+                                <a asp-controller="Auth" asp-action="Login" class="text-dark">Log in</a>
+                            </p>
+                            <p>
+                                <a asp-controller="Auth" asp-action="Register" class="text-dark">Register</a>
+                            </p>
+                        }
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Categories</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: rgb(4, 170, 109); height: 2px" />
+                        <p>
+                            <a href="android-cat.html" class="text-dark">Andriod</a>
+                        </p>
+                        <p>
+                            <a href="animal-cat.html" class="text-dark">Animals</a>
+                        </p>
+                        <p>
+                            <a href="art-cat.html" class="text-dark">Art</a>
+                        </p>
+                        <p>
+                            <a href="car-cat.html" class="text-dark">Cars</a>
+                        </p>
+                        <p>
+                            <a href="design-cat.html" class="text-dark">Design</a>
+                        </p>
+                        <p>
+                            <a href="cute-cat.html" class="text-dark">Cute</a>
+                        </p>
+                        <p>
+                            <a href="all-categories.html" class="text-dark">Others</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Contact</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: rgb(4, 170, 109); height: 2px" />
+                        <p><i class="fas fa-home mr-3"></i> Baku, Seb. Badamdar qes. 3th massiv, Azerbaijan</p>
+                        <p><i class="fas fa-envelope mr-3"></i> 04-azerbaycan@mail.ru</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 994 70 997 77 07</p>
+                        <p><i class="fas fa-print mr-3"></i> + 994 70 997 77 07</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #dddddd">
+            © 2022 Parad Corporation:
+            <a class="text-dark" href="https://www.instagram.com/ferid.shixaliyev/">Ferid Sixaliyev (instagram) </a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+    <!-- DarkMode js -->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        const options = {
+            bottom: '50%', // default: '32px'
+            right: '0px', // default: '32px'
+            left: 'unset', // default: 'unset'
+            time: '0.5s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: '#ECEFF1',  // default: '#fff'
+            buttonColorDark: '#fff',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '<i class="fa-solid fa-circle-half-stroke"></i>', // default: ''
+            autoMatchOsTheme: true // default: true
+
+        }
+
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+    </script>
+
+    <!-- Profile img transmition -->
+    <script>
+        var imgCon = document.querySelector("#pro-img-con");
+        var mainProImg = document.querySelector("#main-pro-img")
+        mainProImg.addEventListener('click', function () {
+            alert();
+        })
+        var imgSrc = imgCon.src;
+        mainProImg.src = imgSrc;
+
+    </script>
+
+    <!-- Like Script -->
+
+    <script>
+        var liked = document.getElementById('likebtn');
+        function ToggleLike() {
+            if (liked.style.color = "rgb(61, 61, 61)") {
+                liked.style.color = "#f93131";
+            }
+            else {
+                liked.style.color = "rgb(61, 61, 61)";
+            }
+        }
+    </script>
+
+    <!-- Download image page -->
+    <script>
+        const imgDownload = document.querySelector(".img-download");
+        const fileName = document.querySelector(".image-name");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        const defaultBtn = document.querySelector("#default-btn");
+        const customBtn = document.querySelector("#custom-btn");
+        const img = document.querySelector("#down-img");
+        let regExp = /[0-9a-zA-Z\^\@@\&\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_]+$/
+        function defaultBtnActive() {
+            defaultBtn.click();
+        }
+        defaultBtn.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function () {
+                    const result = reader.result;
+                    img.src = result;
+                    imgDownload.classList.add("active");
+                }
+                cancelBtn.addEventListener('click', function () {
+                    img.src = "";
+                    imgDownload.classList.remove("active");
+                });
+                reader.readAsDataURL(file)
+            }
+            if (this.value) {
+                let valueStore = this.value.match(regExp);
+                fileName.textContent = valueStore;
+            }
+        })
+    </script>
+
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+
+    <script src="~/assets/js/main.js"></script>
+
+    <script>
+        var loader = document.getElementById('preloader')
+
+        window.addEventListener('load', function () {
+            loader.style.display = 'none'
+        })
+    </script>
+
+
+    @*  Jquery  *@
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        // Ajax
+
+        var likeABtns = document.querySelectorAll(".like")
+        likeABtns.forEach(likeABtn => {
+            likeABtn.addEventListener("click", function (e) {
+                e.preventDefault()
+                dataId = likeABtn.getAttribute("data-id")
+                requestUrl = "https://localhost:44346/Image/Like/" + dataId
+
+                $.get(requestUrl, function (response) {
+                    document.getElementById("ajaxLikeCount").innerHTML = response
+                })
+
+            })
+        })
+    </script>
+    @await RenderSectionAsync("scripts",false)
+</body>
+
+</html>

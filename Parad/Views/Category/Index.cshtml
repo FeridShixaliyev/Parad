@@ -1,0 +1,96 @@
+﻿@using Parad.ViewModels
+@model CategoriesVM
+@{
+    ViewData["Title"] = "Categories";
+}
+
+
+<main>
+    <section>
+        <div class="profile-img-converter" style="display:none">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <img id="pro-img-con" src="~/assets/images/@Model.AppUser.ProfileImage" />
+            }
+        </div>
+    </section>
+    <section id="first-all-categories" class="title-bg darkmode-ignore">
+        <div class="container">
+            <div class="row">
+                <div class="cat-title">
+                    <i class="fa-solid fa-chevron-left start" style="font-size: 39px;padding-top: 15px;"></i>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 39px;padding-top: 15px;"></i>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 30px;padding-top: 20px;"></i>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 23px;padding-top: 24px;"></i>
+                    <h1>
+                        Categories
+                    </h1>
+                    <i class="fa-solid fa-chevron-left" style="font-size: 23px;padding-top: 24px;"></i>
+                    <i class="fa-solid fa-chevron-left" style="font-size: 30px;padding-top: 20px;"></i>
+                    <i class="fa-solid fa-chevron-left" style="font-size: 39px;padding-top: 15px;"></i>
+                    <i class="fa-solid fa-chevron-right end" style="font-size: 39px;padding-top: 15px;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="second-all-categories">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 b-none">
+                    <ul class="categories-list">
+                        @foreach (var item in Model.Categories)
+                        {
+                            <li class="cat-item">
+                                <div class="point">
+                                    <i class="fa-solid fa-arrows-to-dot"></i>
+                                </div>
+                                <a asp-controller="Category" asp-action="GetCategory" asp-route-id="@item.Id">
+                                    <p>
+                                        @item.CategoryName Wallpapers
+                                    </p>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-lg-9 col-md-6">
+                    <div class="masonry">
+                        @foreach (var item in Model.Images.ToList())
+                        {
+                            <div class="item">
+                                <img src="./assets/images/@item.ImageStr">
+                                <div class="user-img-icon">
+                                    <img src="./assets/images/@item.User.ProfileImage" alt="">
+                                    <p>
+                                        @item.User.UserName
+                                    </p>
+                                </div>
+                                <a asp-controller="Image" asp-action="AddFavorites" asp-route-id="@item.Id" class="add-to-collection">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <span class="tooltiptext">add to favorites</span>
+                                </a>
+                                <a class="like" data-id="@item.Id">
+                                    <i class="fa-solid fa-heart">
+                                    </i>
+                                    <span class="tooltiptext">like</span>
+                                </a>
+                                <a href="./assets/images/@item.ImageStr" download class="download">
+                                    <i class="fa-solid fa-arrow-down"></i>
+                                    <span class="tooltiptext">download</span>
+                                </a>
+                                <a asp-controller="Image" asp-action="Details" asp-route-id="@item.Id" class="details" style="top: 10px;left: 119px;">
+                                    <i class="fa-solid fa-info" style="font-size: 18px;"></i>
+                                    <span class="tooltiptext">Details</span>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                    <div class="popup-img darkmode-ignore">
+                        <span>&times;</span>
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

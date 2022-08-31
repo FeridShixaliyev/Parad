@@ -1,0 +1,139 @@
+.login {
+    margin-top: 96px;
+    margin-bottom: 96px;
+
+    .container {
+        .row {
+            .col-lg-12 {
+                text-align: center;
+
+                h1 {
+                    font-size: 30px;
+                }
+
+                .title-line {
+                    margin: 0 auto;
+                    height: 7px;
+                    margin-top: 15px;
+                    width: 250px;
+                    background-repeat: no-repeat;
+                    background-image: linear-gradient(to right top, #cf1111, #d80051, #c5008b, #913dbb, #005dd6);
+                    border-radius: 20px;
+                }
+            }
+
+            .col-lg-6 {
+                margin-top: 30px;
+                padding: 60px 60px;
+                border: 1px solid #d3cccc;
+                box-shadow: 1px 1px 5px 5px rgb(0 0 0 / 10%);
+                height: 350px;
+
+                form {
+                    .mb-3 {
+                        label {
+                            font-size: 17px;
+                            font-weight: 500;
+                        }
+
+                        .form-control {
+                            border: none;
+                            // border-radius: 30px;
+                            height: 34px;
+                            border: 1px solid rgb(4, 170, 109);
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        .form-control[type="text"] {
+                            font-size: 14px;
+                        }
+
+                        .form-control[type="password"] {
+                            font-size: 14px;
+                        }
+
+                    }
+
+                    .form-check {
+                        position: relative;
+                        margin-top: 15px;
+                        margin-bottom: 24px !important;
+
+                        input {
+                            width: 17px;
+                            height: 17px;
+                            box-shadow: none;
+                        }
+                        .form-check-label{
+                            font-size: 16px;
+                        }
+
+                        a {
+                            position: absolute;
+                            right: 0;
+                            text-decoration: none;
+                            color: rgb(4, 170, 109);
+                            display: block;
+                            transition: 0.3s;
+
+                            &:hover {
+                                color: black;
+                            }
+                        }
+                    }
+
+                    .login-btn {
+                        display: flex;
+                        justify-content: center;
+
+                        button {
+                            display: flex;
+                            width: 120px;
+                            height: 33px;
+                            border: none;
+                            background-color: rgb(4, 170, 109);
+                            text-align: center;
+                            border: 1px solid rgb(4, 170, 109);
+                            padding: 0;
+                            transition: 0.4s;
+
+                            p {
+                                color: white;
+                                font-size: 16px;
+                                font-weight: 600;
+                                width: 60%;
+                                margin-top: 3px;
+                            }
+
+                            i {
+                                color: white;
+                                margin-top: 7px;
+                                font-size: 17px;
+                                transition: 0.4s;
+                            }
+
+                            &:hover {
+                                background-color: white;
+
+                                p {
+                                    color: rgb(4, 170, 109);
+                                }
+
+                                i {
+                                    color: rgb(4, 170, 109);
+                                    margin-left: 10px;
+                                    margin-top: 7px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

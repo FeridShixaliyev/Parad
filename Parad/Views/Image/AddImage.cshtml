@@ -1,0 +1,90 @@
+﻿@using Parad.ViewModels
+@model ImageAndTagsVM
+@{
+    ViewData["Title"] = "Add Image";
+}
+
+
+<section>
+    <div class="profile-img-converter" style="display:none">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <img id="pro-img-con" src="~/assets/images/@ViewBag.AppUser.ProfileImage" />
+        }
+    </div>
+</section>
+<section id="first-start">
+</section>
+<section id="second-start">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 left">
+                <div class="img-download">
+                    <div class="photo">
+                        <img src="" alt="" id="down-img">
+                    </div>
+                    <div class="content">
+                        <div class="icon">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <div class="message">
+                            No image chosen , yet
+                        </div>
+                    </div>
+                    <div class="cancel-btn">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                    <div class="image-name">
+                        Filename here
+                    </div>
+                </div>
+                <button onclick="defaultBtnActive()" id="custom-btn">Choose a Image</button>
+            </div>
+            <div class="col-lg-6 right">
+                <div class="note">
+                    <p>
+                        NOTE :<br>
+                        Dear @ViewBag.AppUser.UserName , Please choose most correct  category of image when downloading image .
+                        This will make your downloaded image stand out more .
+                    </p>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <input id="default-btn" asp-for="@Model.Image.ImageFile" accept="image/*" hidden>
+
+                    <div style="margin-bottom:20px">
+                        <select class="js-example-basic-single form-select my-3" asp-for="@Model.Image.CategoryId" asp-items="@(new SelectList(ViewBag.Categories,nameof(Model.Image.Category.Id),nameof(Model.Image.Category.CategoryName)))" aria-label="Default select example">
+                            <option selected disabled>Image Category </option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom:20px">
+                        <label asp-for="TagIds">Choose image tags :</label>
+                        <select class="js-example-basic-multiple form-select my-3" asp-for="TagIds" multiple asp-items="@(new SelectList(ViewBag.Tags,nameof(Tag.Id),nameof(Tag.TagName)))" aria-label="Default select example">
+                        </select>
+                        <span asp-validation-for="TagIds"></span>
+                    </div>
+                    <div style="margin-bottom:15px">
+                        <p>
+                            If you search a tag , you can craete a tag
+                        </p>
+                        <a class="btn btn-success" asp-controller="Tag" asp-action="Create" style="margin-top:5px">
+                            <i class="fa-solid fa-plus"></i>
+                            Create Tag
+                        </a>
+                    </div>
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <button type="submit" class="btn btn-success">Share</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple,.js-example-basic-single').select2();
+        });
+    </script>
+
+}

@@ -1,0 +1,84 @@
+﻿@using Parad.ViewModels
+@model GetCategoryVM
+@{
+    ViewData["Title"] = Model.Category.CategoryName;
+}
+
+<section>
+    <div class="profile-img-converter" style="display:none">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <img id="pro-img-con" src="~/assets/images/@Model.AppUser.ProfileImage" />
+        }
+    </div>
+</section>
+<section id="first-art-categories" class="title-bg darkmode-ignore">
+    <div class="container">
+        <div class="row">
+            <div class="cat-title">
+                <i class="fa-solid fa-chevron-left start" style="font-size: 39px;padding-top: 15px;"></i>
+                <i class="fa-solid fa-chevron-right" style="font-size: 39px;padding-top: 15px;"></i>
+                <i class="fa-solid fa-chevron-right" style="font-size: 30px;padding-top: 20px;"></i>
+                <i class="fa-solid fa-chevron-right" style="font-size: 23px;padding-top: 24px;"></i>
+                <h1>
+                    @Model.Category.CategoryName
+                </h1>
+                <i class="fa-solid fa-chevron-left" style="font-size: 23px;padding-top: 24px;"></i>
+                <i class="fa-solid fa-chevron-left" style="font-size: 30px;padding-top: 20px;"></i>
+                <i class="fa-solid fa-chevron-left" style="font-size: 39px;padding-top: 15px;"></i>
+                <i class="fa-solid fa-chevron-right end" style="font-size: 39px;padding-top: 15px;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="second-art-categories">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="back darkmode-ignore">
+                    <a asp-controller="Category" asp-action="Index">
+                        <i class="fa-solid fa-left-long"></i>
+                        <p>
+                            Back to Categories
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="masonry">
+                @foreach (var item in Model.Images)
+                {
+                    <div class="item">
+                        <img src="~/assets/images/@item.ImageStr">
+                        <div class="user-img-icon">
+                            <img src="~/assets/images/@item.User.ProfileImage" alt="">
+                            <p>
+                                @item.User.UserName
+                            </p>
+                        </div>
+                        <a asp-controller="Image" asp-action="AddFavorites" asp-route-id="@item.Id" class="add-to-collection">
+                            <i class="fa-solid fa-plus"></i>
+                            <span class="tooltiptext">add to favorites</span>
+                        </a>
+                        <a class="like" data-id="@item.Id">
+                            <i class="fa-solid fa-heart">
+                            </i>
+                            <span class="tooltiptext">like</span>
+                        </a>
+                        <a href="./assets/images/@item.ImageStr" download class="download">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <span class="tooltiptext">download</span>
+                        </a>
+                        <a asp-controller="Image" asp-action="Details" asp-route-id="@item.Id" class="details" style="top: 10px;left: 119px;">
+                            <i class="fa-solid fa-info" style="font-size: 18px;"></i>
+                            <span class="tooltiptext">Details</span>
+                        </a>
+                    </div>
+                }
+            </div>
+            <div class="popup-img darkmode-ignore">
+                <span>&times;</span>
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+</section>

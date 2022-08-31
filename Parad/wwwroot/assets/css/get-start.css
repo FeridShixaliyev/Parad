@@ -1,0 +1,125 @@
+#first-start {
+  height: 390px;
+  background-image: url(/assets/images/welcome.jpg);
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
+}
+
+#second-start .container .row .left {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#second-start .container .row .left .img-download {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  border: 2px dashed #c2cdda;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#second-start .container .row .left .img-download .photo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#second-start .container .row .left .img-download .photo img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  text-indent: -10000px;
+}
+#second-start .container .row .left .img-download .content {
+  margin-bottom: 64px;
+}
+#second-start .container .row .left .img-download .content .icon {
+  font-size: 100px;
+  color: rgb(4, 170, 109);
+  text-align: center;
+}
+#second-start .container .row .left .img-download .content .message {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(4, 170, 109);
+}
+#second-start .container .row .left .img-download .cancel-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: rgb(4, 170, 109);
+  display: none;
+  cursor: pointer;
+}
+#second-start .container .row .left .img-download .image-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+  display: none;
+  background: linear-gradient(to right, #074C00, #42A341, #B8E2A3);
+}
+#second-start .container .row .left .active {
+  border: none;
+}
+#second-start .container .row .left .active .cancel-btn {
+  display: block;
+  transition: 0.2s;
+}
+#second-start .container .row .left .active .cancel-btn:hover {
+  color: red;
+}
+#second-start .container .row .left .active:hover .image-name {
+  display: block;
+}
+#second-start .container .row .left button {
+  width: 100%;
+  height: 50px;
+  margin-top: 35px;
+  display: block;
+  border: none;
+  background: linear-gradient(to right, #074C00, #42A341, #B8E2A3);
+  border-radius: 30px;
+  font-size: 20px;
+  outline: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  isolation: isolate;
+}
+#second-start .container .row .right {
+  padding: 40px;
+}
+#second-start .container .row .right .note p {
+  font-size: 16px;
+  font-weight: 500;
+}
+#second-start .container .row .right form {
+  position: relative;
+}
+#second-start .container .row .right form select {
+  margin-bottom: 40px;
+  box-shadow: none;
+  transition: 0.3s;
+}
+#second-start .container .row .right form select option {
+  transition: 0.3s;
+}
+#second-start .container .row .right form button {
+  position: absolute;
+  right: 0;
+  width: 220px;
+  height: 38px;
+  border: 1px solid rgb(4, 170, 109);
+  font-size: 17px;
+  font-weight: 500;
+  transition: 0.2s;
+}/*# sourceMappingURL=get-start.css.map */

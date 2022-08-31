@@ -1,0 +1,42 @@
+﻿@model List<CommentReport>
+@{
+    ViewData["Title"] = "Comment Reports";
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Comment Reports</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> Id </th>
+                        <th> Reason </th>
+                        <th> Report's user </th>
+                        <th> Reported Commnent </th>
+                        <th> Content </th>
+                        <th> Delete </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td> @item.Id </td>
+                            <td>
+                                @item.ReasonReport.Reason
+                            </td>
+                            <td> @item.User.UserName </td>
+                            <td> @item.Comment.Content </td>
+                            <td>
+                                @item.ReportContent
+                            </td>
+                            <td> <a class="btn btn-outline-danger" asp-controller="Comment" asp-action="Delete" asp-route-id="@item.CommentId">delete</a> </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

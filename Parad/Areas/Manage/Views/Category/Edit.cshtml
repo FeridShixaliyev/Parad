@@ -1,0 +1,25 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Edit Category";
+}
+
+<div class="container mt-5">
+    <h3>Edit Category</h3>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="@Model.CategoryName" class="form-label">Category Name</label>
+            <input asp-for="@Model.CategoryName" class="form-control">
+            <span class="mt-2 text text-danger" asp-validation-for="@Model.CategoryName"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.DescriptionImageFile" class="form-label">Description Photos</label>
+            <input asp-for="@Model.DescriptionImageFile" accept="image/*" class="form-control">
+            <span class="mt-2 text text-danger" asp-validation-for="@Model.DescriptionImageFile"></span>
+        </div>
+        <div class="delete-image">
+            @*<img style="width:140px;height:140px;border-radius:7px; margin-right:7px;cursor:pointer" src="~/assets/images/@Model.DescriptionImage" />*@
+        </div>
+        <div class="mt-2 text text-danger" asp-validation-summary="ModelOnly"></div>
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+</div>

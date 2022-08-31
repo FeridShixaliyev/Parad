@@ -1,0 +1,79 @@
+#first-all-categories {
+  background-image: url(/assets/images/128072.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 100%;
+  padding-top: 110px;
+}
+#first-all-categories .container .row .cat-title {
+  display: flex;
+  justify-content: center;
+  margin: 0 !important;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 7px;
+}
+#first-all-categories .container .row .cat-title h1 {
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 7px;
+  cursor: default;
+}
+
+#second-all-categories {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+#second-all-categories .container .row .col-lg-3 .categories-list {
+  list-style-type: none;
+  border-right: 1px solid gray;
+}
+#second-all-categories .container .row .col-lg-3 .categories-list li {
+  display: flex;
+}
+#second-all-categories .container .row .col-lg-3 .categories-list li .point {
+  margin-right: 10px;
+  padding-top: 3px;
+}
+#second-all-categories .container .row .col-lg-3 .categories-list li a {
+  text-decoration: none;
+  color: black;
+  transition: 0.2s;
+}
+#second-all-categories .container .row .col-lg-3 .categories-list li a:hover {
+  color: rgb(4, 170, 109);
+}
+#second-all-categories .container .row .col-lg-3 .categories-list li a p {
+  font-size: 16px;
+}
+/* Media query */
+@media screen and (max-width: 992px){
+
+  #first-all-categories .container .row .cat-title h1 {
+    padding-top: 10px;
+  }
+}
+@media screen and (max-width: 776px){
+
+  #second-all-categories .container .row .col-lg-3 .categories-list {
+    border: none;
+  }
+  #second-all-categories .container .row .col-lg-3 .categories-list li {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 532px){
+  #first-all-categories .container .row .cat-title h1 {
+    padding-top: 15px;
+  }
+}
+@media screen and (max-width: 400px){
+  #first-all-categories .container .row .cat-title h1 {
+    padding-top: 17px;
+  }
+  #first-all-categories .container .row .cat-title .start,.end{
+    display: none;
+  }
+}

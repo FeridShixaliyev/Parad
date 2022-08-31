@@ -1,0 +1,49 @@
+﻿@using Parad.ViewModels
+@model CommentReportVM
+@{
+    ViewData["Title"] = "Report";
+}
+
+<section>
+    <div class="profile-img-converter" style="display:none">
+        <img id="pro-img-con" src="~/assets/images/@Model.AppUser.ProfileImage" />
+    </div>
+</section>
+<div class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>
+                    Report
+                </h1>
+                <div class="title-line darkmode-ignore">
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <select class="form-select" asp-for="@Model.CommentReport.ReasonReportId" asp-items="@(new SelectList(Model.ReasonReports,nameof(Model.CommentReport.ReasonReport.Id),nameof(Model.CommentReport.ReasonReport.Reason)))" aria-label="Default select example">
+                            <option selected disabled>Reason Of Report </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="@Model.CommentReport.ReportContent"  class="form-label">Pls,Write more detailed</label>
+                        <textarea  asp-for="@Model.CommentReport.ReportContent"  class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3 login-btn darkmode-ignore">
+                        <button type="submit" asp-route-id="@Model.Comment.Id">
+                            <p>
+                                Report
+                            </p>
+                            <i class="fa-solid fa-right-long"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>

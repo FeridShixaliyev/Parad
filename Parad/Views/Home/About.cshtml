@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+<main>
+    <section>
+        <div class="profile-img-converter" style="display:none">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <img id="pro-img-con" src="~/assets/images/@ViewBag.AppUser.ProfileImage" />
+            }
+        </div>
+    </section>
+    <section id="about-text" style="margin-top:60px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 left">
+                    <div class="text-box">
+                        <div class="text-title">
+                            <h1>
+                                About
+                            </h1>
+                            <div class="title-line">
+                            </div>
+                        </div>
+                        <div class="content-text">
+                            <p>
+                                Parad is home to a growing community of photographers—from hobbyists,
+                                professionals, emerging brands and everyone in between.A lot of free
+                                high-resolution images brought to you by the world’s most generous community of
+                                photographers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 right">
+                    <div class="text-image">
+                        <img src="~/assets/images/about-2.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 left">
+                    <div class="text-image">
+                        <img src="~/assets/images/about-3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 right">
+                    <div class="text-box">
+                        <div class="text-title">
+                            <h1>
+                                Parad
+                            </h1>
+                            <div class="title-line">
+                            </div>
+                        </div>
+                        <div class="content-text">
+                            <p>
+                                Add something awesome — Parad was born from the pain we had in finding great, usable
+                                imagery. And we
+                                weren’t alone. Which is why, today many of creators from around the world have
+                                downloaded over a lot of Parad images to create presentations, artwork, mockups,
+                                and more.
+                            </p>
+                        </div>
+                        <div class="add-something">
+                            <a asp-controller="Image" asp-action="AddImage">
+                                <p>
+                                    Start Now
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 left">
+                    <div class="text-box">
+                        <div class="text-title">
+                            <h1>
+                                Community
+                            </h1>
+                            <div class="title-line">
+                            </div>
+                        </div>
+                        <div class="content-text">
+                            <p>
+                                You don’t need to know someone, or have an agent, or have a name to contribute to
+                                Unsplash. We’re the place where creators meet their audience, where individuals
+                                become a community and where anyone can become a source for creativity. So whether
+                                you’re new to photography or consider yourself a pro—your images are welcome here.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 right">
+                    <div class="text-image">
+                        <img src="~/assets/images/about-5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

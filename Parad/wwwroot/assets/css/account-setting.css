@@ -1,0 +1,280 @@
+#first-account {
+    margin-top: 96px;
+    margin-bottom: 96px;
+}
+
+    #first-account .container .row .col-lg-12 {
+        margin-bottom: 20px;
+    }
+
+        #first-account .container .row .col-lg-12 .account-title h2 {
+            font-weight: 600;
+            color: #464242;
+        }
+
+.darkmode--activated #first-account .container .row .col-lg-12 hr {
+    color: white;
+}
+
+#first-account .container .row .left .user-image {
+    padding: 31px;
+}
+
+    #first-account .container .row .left .user-image img {
+        width: 294px;
+        height:294px;
+        border-radius: 50%;
+    }
+
+#first-account .container .row .left .username-text {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#first-account .container .row .center {
+    position: relative;
+}
+
+    #first-account .container .row .center .fl {
+        position: absolute;
+        left: 0;
+        border-left: 1px solid #b9b9b9;
+        height: 100%;
+    }
+
+    #first-account .container .row .center .user-info {
+        height: 100%;
+        padding: 24px 0px 0px 38px;
+    }
+
+        #first-account .container .row .center .user-info .info-title p {
+            font-size: 21px;
+            font-weight: 600;
+            color: #323232;
+        }
+
+.darkmode--activated #first-account .container .row .center .user-info .info-title p {
+    color: white;
+}
+
+#first-account .container .row .center .user-info .infos {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+    #first-account .container .row .center .user-info .infos p {
+        font-size: 19px;
+    }
+
+.darkmode--activated #first-account .container .row .center .user-info .infos p {
+    color: white;
+}
+
+#first-account .container .row .center .user-info .infos .minus {
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+#first-account .container .row .center .user-info .change-btn {
+    position: absolute;
+    width: 140px;
+    margin: 0 auto;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+    #first-account .container .row .center .user-info .change-btn a {
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+        height: 35px;
+        border: 2px solid gray;
+        border-radius: 8px;
+        background-color: #dddddd;
+        padding: 5px;
+        transition: 0.2s;
+    }
+
+        #first-account .container .row .center .user-info .change-btn a p {
+            margin: 0;
+            color: #464242;
+        }
+
+        #first-account .container .row .center .user-info .change-btn a:hover {
+            background-color: white;
+        }
+
+#first-account .container .row .right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+    #first-account .container .row .right .fl {
+        position: absolute;
+        left: 0;
+        border-left: 1px solid #b9b9b9;
+        height: 100%;
+    }
+
+    #first-account .container .row .right .user-status {
+        height: 100%;
+        padding: 24px 0px 0px 38px;
+    }
+
+        #first-account .container .row .right .user-status .status-title p {
+            font-size: 21px;
+            font-weight: 600;
+            color: #323232;
+        }
+
+.darkmode--activated #first-account .container .row .right .user-status .status-title p {
+    color: white;
+}
+
+#first-account .container .row .right .user-status .infos {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+    #first-account .container .row .right .user-status .infos p {
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+.darkmode--activated #first-account .container .row .right .user-status .infos p {
+    color: white;
+}
+
+#first-account .container .row .right .user-status .infos .minus {
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+#first-account .container .row .right .user-status .get-start {
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+    #first-account .container .row .right .user-status .get-start a {
+        position: absolute;
+        width: 260px;
+        text-align: center;
+        text-decoration: none;
+        height: 40px;
+        border: 2px solid rgb(4, 170, 109);
+        border-radius: 3px;
+        margin-top: 30px;
+        background: rgb(4, 170, 109);
+        transition: 0.2s;
+    }
+
+        #first-account .container .row .right .user-status .get-start a:hover {
+            background: #eee;
+        }
+
+        #first-account .container .row .right .user-status .get-start a p {
+            margin: 0;
+            font-size: 21px;
+            font-weight: 500;
+            color: white;
+            transition: 0.5s;
+        }
+
+        #first-account .container .row .right .user-status .get-start a:hover p {
+            color: rgb(4, 170, 109);
+        }
+
+
+#second-account {
+    margin-bottom: 50px;
+}
+
+    #second-account .container .row .col-lg-12 {
+        margin-bottom: 20px;
+    }
+
+.darkmode--activated #second-account .container .row hr {
+    color: white;
+}
+
+#second-account .container .row .col-lg-12 .account-title h2 {
+    font-weight: 600;
+    color: #464242;
+}
+/*# sourceMappingURL=account-setting.css.map */
+
+/* Media query */
+@media screen and (min-width: 991px) and (max-width: 1199px){
+    #first-account .container .row .left .user-image img {
+        height: 220px;
+        width: 220px;
+    }
+    #first-account .container .row{
+        height:500px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #first-account .container .row .col-lg-4 .fl {
+        display: none;
+    }
+    #first-account .container .row .left .user-image img {
+        height: 220px;
+        width: 220px;
+    }
+
+}
+@media screen and (max-width: 767px) {
+    #first-account .container .row .left .user-image {
+        display: flex;
+        justify-content: center;
+    }
+    #first-account .container .row .center {
+        display: flex;
+        justify-content: center;
+        height: 350px;
+    }
+    #first-account .container .row .center .user-info {
+        padding: 0;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #first-account .container .row .center .user-info .info-title p {
+        font-size: 18px;
+    }
+
+    #first-account .container .row .center .user-info .infos p {
+        font-size: 15px;
+    }
+
+    #first-account .container .row .center .user-info .infos .minus {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    #first-account .container .row .left .user-image img {
+        width: 200px;
+        height: 200px;
+    }
+    #first-account .container .row .right .user-status .get-start a {
+        width: 200px;
+    }
+
+
+    #first-account .container .row .right .user-status .status-title p {
+        font-size: 18px;
+    }
+    #first-account .container .row .right .user-status .infos p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+}

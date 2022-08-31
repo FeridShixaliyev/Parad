@@ -1,0 +1,40 @@
+﻿@model List<Comment>
+@{
+    ViewData["Title"] = "Comment";
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Comment</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> Id </th>
+                        <th> Image </th>
+                        <th> User's Comment </th>
+                        <th> Content </th>
+                        <th> Delete </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td> @item.Id </td>
+                            <td>
+                                <img src="~/assets/images/@item.Image.ImageStr" alt="image" style="width:60px;height:35px;border-radius:5px" />
+                            </td>
+                            <td> @item.User.UserName </td>
+                            <td>
+                                @item.Content
+                            </td>
+                            <td> <a class="btn btn-outline-danger" asp-controller="Comment" asp-action="Delete" asp-route-id="@item.Id">delete</a> </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

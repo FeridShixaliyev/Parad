@@ -1,0 +1,47 @@
+﻿@model List<AppUser>
+@{
+    ViewData["Title"] = "Category";
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Users</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> Profile Image </th>
+                        <th> Username </th>
+                        <th> First Name </th>
+                        <th> Last Name </th>
+                        <th> Email </th>
+                        <th> Is LockOut? </th>
+                        <th> Start Date Time </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <img src="~/assets/images/@item.ProfileImage" alt="image" style="width:50px;height:50px;border-radius:50%" />
+                            </td>
+                            <td> @item.UserName </td>
+                            <td> @item.FirstName </td>
+                            <td> @item.LastName </td>
+                            <td> @item.Email </td>
+                            <td>
+                                <a>@item.LockoutEnabled</a>
+                            </td>
+                            <td>
+                                @item.StartDate
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

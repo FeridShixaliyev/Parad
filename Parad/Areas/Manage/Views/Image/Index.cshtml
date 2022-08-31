@@ -1,0 +1,41 @@
+﻿@using Parad.ViewModels
+@model GetCategoryVM
+@{
+    ViewData["Title"] = "Image";
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Images</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> Id </th>
+                        <th> Image </th>
+                        <th> Image's user </th>
+                        <th> Like Count </th>
+                        <th> Delete </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Images)
+                    {
+                        <tr>
+                            <td> @item.Id </td>
+                            <td>
+                                <img src="~/assets/images/@item.ImageStr" alt="image" style="width:60px;height:35px;border-radius:5px" />
+                            </td>
+                            <td> @item.User.UserName </td>
+                            <td>
+                                @Model.Likes.Where(l=>l.Image==item).FirstOrDefault().LikeCount
+                            </td>
+                            <td> <a class="btn btn-outline-danger" asp-controller="Image" asp-action="Delete" asp-route-id="@item.Id">delete</a> </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

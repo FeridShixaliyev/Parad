@@ -1,0 +1,93 @@
+﻿@model AppUser
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+
+<section>
+    <div class="profile-img-converter" style="display:none">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <img id="pro-img-con" src="~/assets/images/@Model.ProfileImage" />
+        }
+    </div>
+</section>
+<section id="user-edit">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="edit-title">
+                    <h1>
+                        Edit User
+                    </h1>
+                    <i class="fa-solid fa-gears darkmode-ignore"></i>
+                </div>
+            </div>
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-6">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <div class="img-download">
+                            <div class="photo">
+                                <img src="~/assets/images/@Model.ProfileImage" alt="" id="down-img">
+                            </div>
+                            <div class="cancel-btn">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                        <label asp-for="@Model.ProfileImageFile" for="default-btn" class="form-label">Profile Photo : </label>
+                        <input asp-for="@Model.ProfileImageFile" id="default-btn" type="file" accept="image/*">
+                        <span asp-validation-for="ProfileImageFile" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="FirstName" for="firstname" class="form-label">First Name :</label>
+                        <input asp-for="FirstName" class="form-control darkmode-ignore" id="firstname"
+                               placeholder="First Name">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="LastName" for="lastname" class="form-label">Last Name :</label>
+                        <input asp-for="LastName" class="form-control darkmode-ignore" id="lastname"
+                               placeholder="Last Name">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="UserName" for="username" class="form-label">Username :</label>
+                        <input asp-for="UserName" class="form-control darkmode-ignore" id="username"
+                               placeholder="Username">
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">Email :</label>
+                        <input asp-for="Email" class="form-control darkmode-ignore" id="email" placeholder="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="PasswordHash" for="password" class="form-label">New Password :</label>
+                        <input asp-for="PasswordHash" type="password" class="form-control darkmode-ignore" id="password"
+                               placeholder="Password">
+                        <span asp-validation-for="PasswordHash" class="text-danger"></span>
+                    </div>
+                    @*<div class="mb-3">
+                            <label  for="confirmPassword" class="form-label">Confirm Password :</label>
+                            <input type="password" class="form-control darkmode-ignore" id="confirmPassword"
+                                   placeholder="Confirm Password">
+                            <span></span>
+                        </div>*@
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3 save-btn darkmode-ignore">
+                        <button type="submit">
+                            <p>
+                                Save
+                            </p>
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3">
+            </div>
+        </div>
+    </div>
+</section>

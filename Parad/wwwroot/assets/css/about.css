@@ -1,0 +1,90 @@
+#about-text {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+#about-text .container .row .left .text-box {
+  padding: 20px;
+}
+#about-text .container .row .left .text-box .text-title h1 {
+  font-size: 34px;
+  color: #464646;
+  text-align: center;
+}
+#about-text .container .row .left .text-box .text-title .title-line {
+  height: 5px;
+  background-image: linear-gradient(to right top, #cf1111, #d80051, #c5008b, #913dbb, #005dd6);
+  width: 14em;
+  margin: 0 auto;
+  border-radius: 7px;
+  margin-bottom: 17px;
+  isolation: isolate;
+}
+#about-text .container .row .left .text-box .content-text p {
+  font-size: 17px;
+  color: #4a4a4a;
+}
+#about-text .container .row .left .text-image {
+  padding: 20px;
+  width: 100%;
+  height: 337px;
+}
+#about-text .container .row .left .text-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 79px;
+}
+#about-text .container .row .right .text-image {
+  padding: 20px;
+  width: 100%;
+  height: 337px;
+}
+#about-text .container .row .right .text-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 79px;
+}
+#about-text .container .row .right .text-box {
+  padding: 20px;
+}
+#about-text .container .row .right .text-box .text-title h1 {
+  font-size: 34px;
+  color: #464646;
+  text-align: center;
+}
+#about-text .container .row .right .text-box .text-title .title-line {
+  height: 5px;
+  background-image: linear-gradient(to right top, #cf1111, #d80051, #c5008b, #913dbb, #005dd6);
+  width: 14em;
+  margin: 0 auto;
+  border-radius: 7px;
+  margin-bottom: 17px;
+  isolation: isolate;
+}
+#about-text .container .row .right .text-box .content-text p {
+  font-size: 17px;
+  color: #4a4a4a;
+}
+#about-text .container .row .right .text-box .add-something {
+  isolation: isolate;
+}
+#about-text .container .row .right .text-box .add-something a {
+  text-align: center;
+  text-decoration: none;
+}
+#about-text .container .row .right .text-box .add-something a p {
+  color: white;
+  background: rgb(4, 170, 109);
+  border: 1px solid rgb(4, 170, 109);
+  width: 200px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 7px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 7px;
+  transition: 0.2s;
+}
+#about-text .container .row .right .text-box .add-something a:hover p {
+  background: white;
+  color: rgb(4, 170, 109);
+}/*# sourceMappingURL=about.css.map */

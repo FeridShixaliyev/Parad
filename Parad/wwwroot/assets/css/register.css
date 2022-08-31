@@ -1,0 +1,106 @@
+.register {
+  margin-top: 96px;
+  margin-bottom: 96px;
+}
+.register .container .row .col-lg-12 {
+  text-align: center;
+}
+.register .container .row .col-lg-12 h1 {
+  font-size: 30px;
+}
+.register .container .row .col-lg-12 .title-line {
+  margin: 0 auto;
+  height: 7px;
+  margin-top: 15px;
+  width: 250px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right top, #cf1111, #d80051, #c5008b, #913dbb, #005dd6);
+  border-radius: 20px;
+}
+.register .container .row .col-lg-6 {
+  margin-top: 30px;
+  padding: 60px 60px;
+  border: 1px solid #d3cccc;
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.register .container .row .col-lg-6 form .mb-3 label {
+  font-size: 17px;
+  font-weight: 500;
+}
+.register .container .row .col-lg-6 form .mb-3 .form-control {
+  border: none;
+  height: 34px;
+  border: 1px solid rgb(4, 170, 109);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.register .container .row .col-lg-6 form .mb-3:focus {
+  outline: none;
+}
+.register .container .row .col-lg-6 form .mb-3 .form-control[type=text] {
+  font-size: 14px;
+}
+.register .container .row .col-lg-6 form .mb-3 .form-control[type=password] {
+  font-size: 14px;
+}
+.register .container .row .col-lg-6 form .form-check {
+  position: relative;
+  margin-bottom: 24px !important;
+  margin-top: 15px;
+}
+.register .container .row .col-lg-6 form .form-check input {
+  width: 17px;
+  height: 17px;
+  box-shadow: none;
+}
+.register .container .row .col-lg-6 form .form-check a {
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  color: rgb(4, 170, 109);
+  transition: 0.3s;
+}
+.register .container .row .col-lg-6 form .form-check a:hover {
+  color: black;
+}
+.register .container .row .col-lg-6 form .register-btn {
+  display: flex;
+  justify-content: center;
+}
+.register .container .row .col-lg-6 form .register-btn button {
+  display: flex;
+  width: 120px;
+  height: 33px;
+  border: none;
+  background-color: rgb(4, 170, 109);
+  text-align: center;
+  border: 1px solid rgb(4, 170, 109);
+  padding: 0;
+  padding-left: 11px;
+  transition: 0.4s;
+}
+.register .container .row .col-lg-6 form .register-btn button p {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  width: 60%;
+  margin-right: 6px;
+  margin-top: 3px;
+}
+.register .container .row .col-lg-6 form .register-btn button i {
+  color: white;
+  margin-top: 7px;
+  font-size: 17px;
+  transition: 0.4s;
+}
+.register .container .row .col-lg-6 form .register-btn button:hover {
+  background-color: white;
+}
+.register .container .row .col-lg-6 form .register-btn button:hover p {
+  color: rgb(4, 170, 109);
+}
+.register .container .row .col-lg-6 form .register-btn button:hover i {
+  color: rgb(4, 170, 109);
+  margin-left: 10px;
+  margin-top: 7px;
+}/*# sourceMappingURL=register.css.map */
